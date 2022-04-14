@@ -1,0 +1,15 @@
+<%- include("header") -%>
+<h1>Your friend's posts</h1>
+<% for(let i=0;i<5 ;i++){%>
+    <p><%= Posts[i].post %></p>
+<%}%>
+
+<form action="/nextpage" method="post">
+    <Button type="submit">Next Page ▶</Button>
+</form>
+
+<form action="/myprofil" method="post">
+    <Button type="submit">Go back to My Profile</Button>
+</form>
+
+<%- include("footer") -%>

@@ -1,0 +1,47 @@
+<%-  include("header") %>
+
+<div class="sign-up">
+    <h1>SIGN UP</h1>
+    <form action="/signup" method="post">
+        <div class="group">
+            <label for="name">Enter your name</label>
+            <input type="text" name="name">
+        </div>
+        <div class="group">
+            <label for="email">Enter email Id</label>
+            <input type="text" name="email">
+        </div>
+        <div class="group">
+            
+        <label for="password">Enter Password</label>
+        <input type="password" name="password">
+        </div>
+        <div class="group">
+            <label for="confirm">Confirm Password</label>
+            <input type="password" name="confirm">
+        </div>
+        <div class="group">
+            <button type="submit">Sign Up</button>
+        </div>
+        <div class="group"></div>
+    </form>
+</div>
+
+<div class="sign-in">
+    <h1>SIGN IN</h1>
+    <form action="/login" method="post">
+        <div class="group">
+            <label for="email">Enter email Id</label>
+            <input type="text" name="email">
+        </div>
+        <div class="group">
+        <label for="password">Enter Password</label>
+        <input type="password" name="password">
+        </div>
+        <div class="group">
+            <button type="submit">Sign In</button>
+        </div>
+    </form>
+</div>
+
+<%-  include("footer") %>

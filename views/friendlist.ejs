@@ -1,0 +1,33 @@
+<%-  include("header") %>
+
+<form action="/addfriend" method="post">
+    <label for="friendid">Search Friend</label>
+    <input type="text" name="friendid">
+    <button type="submit">Send Friend Request</button>
+</form>
+
+<h1>Friends</h1>
+<% for(let i=0;i<Friends.length ;i++){%>
+    <p><%= Friends[i].friendid %></p>
+    <form action="/deletefriend/<%= Friends[i].friendid %>" method="post">
+        <button type="submit">❌</button>
+    </form>
+<%}%>
+
+<h1>Friend Requests</h1>
+<% for(let i=0;i<FriendRequests.length ;i++){%>
+    <p><%= FriendRequests[i].friendid %></p>
+    <form action="/addrequest/<%= FriendRequests[i].friendid %>" method="post">
+        <button type="submit">✅</button>
+    </form>
+    <form action="/rejectrequest/<%= FriendRequests[i].friendid %>" method="post">
+        <button type="submit">❌</button>
+    </form>
+<%}%>
+
+<form action="/myprofil" method="post">
+<button type="submit">Go to my profile</button>
+</form>
+
+
+<%-  include("footer") %>

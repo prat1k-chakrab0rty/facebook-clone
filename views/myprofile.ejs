@@ -1,0 +1,56 @@
+<%-  include("header") %>
+
+<h1 class="name">Hello <%= Name %></h1>
+
+<h1 class="myprofile">Add Posts</h1>
+
+<form action="/myprofile" method="post">
+    <div class="group">
+        <label for="post" value="no">Write post</label>
+        <input  class="post-box" type="text" name="post">
+    </div>
+    <div class="group">
+        <label>Visibility</label>
+
+    </div>
+    <div class="group">
+        <input type="checkbox" name="visibility" value="all">
+        <label>all</label>
+
+    </div>
+    <div class="group">
+        <input type="checkbox" name="visibility" value="onlyfriends">
+        <label>only-friends</label>
+
+    </div>
+    <div class="group">
+        <button  class="post" type="submit" value="post" name="POST">Post</button>
+    </div>
+    <div class="group"></div>
+</form>
+
+<form action="/community" type="post">
+    <button type="submit" name="community">See friend's Posts</button>
+</form>
+
+<form action="/friendlist" type="post">
+    <button type="submit" name="friend">Friends</button>
+</form>
+
+<h1 class="myprofile">My Posts</h1>
+<h3>Press the button to toggle visibility of the posts.</h3>
+<% for(let i=0;i<Posts.length ;i++){%>
+    <p><%= Posts[i].post %></p>
+    <form action="/visibility/<%= Posts[i].post %>" method="post">    
+        <button type="submit"><%= Posts[i].visibility %></button>
+    </form>
+    <form action="deletepost/<%= Posts[i].post %>" method="post">
+        <button type="submit" name="delete">❌</button>
+    </form>
+<%}%>
+
+<form action="/logout" type="post">
+    <button type="submit">LOG OUT</button>
+</form>
+
+<%-  include("footer") %>
